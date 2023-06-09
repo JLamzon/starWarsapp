@@ -5,20 +5,35 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { PlanetsTabComponent } from './TabPages/planets-tab/planets-tab.component';
+import { SearchTabsComponent } from './search-page/search-tabs/search-tabs.component';
+import { StarshipTabComponent } from './TabPages/starship-tab/starship-tab.component';
+import { CharacterTabComponent } from './TabPages/character-tab/character-tab.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    PlanetsTabComponent,
+    SearchTabsComponent,
+    StarshipTabComponent,
+    CharacterTabComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'search', component: SearchPageComponent },
       { path: 'homepage', component: HomePageComponent },
-      { path: '', redirectTo: 'welcome', pathMatch:'full' },
+      { path: 'characters', component: CharacterTabComponent },
+      { path: 'starships', component: StarshipTabComponent },
+      { path: 'planets', component: PlanetsTabComponent },
+      { path: '', redirectTo: 'homepage', pathMatch:'full' },
+      { path: '**', redirectTo: 'homepage', pathMatch: 'full' },
   ]),
   ],
   bootstrap: [AppComponent]

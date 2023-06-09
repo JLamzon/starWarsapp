@@ -1,4 +1,19 @@
+@font-face {
+    font-family: 'STJEDISE.TTF';
+    src: url(../assets/Starjout.ttf);
+}
+
 li * {
-    color: white;
+    color: yellow;
     text-decoration: none;
 }
+
+app-root {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  h1 {
+    font-family: STJEDISE;
+  }

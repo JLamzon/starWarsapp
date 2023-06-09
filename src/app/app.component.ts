@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<div>
-  <h1 style="color:yellow">{{pageTitle}}</h1>
-  <ul>
+  template: `<div style="margin-left: 1rem">
+  <h1 style="color:yellow; font-size: 40px">{{pageTitle}}</h1>
+  <ul style="">
   <li><a class="nav-link" routerLink="/homepage">Home</a></li>
   <li><a class="nav-link" routerLink="/search">Search Page</a></li>
   </ul>

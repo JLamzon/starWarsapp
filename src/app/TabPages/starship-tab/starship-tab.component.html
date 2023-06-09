@@ -1,0 +1,43 @@
+<div *ngIf="loading" class="flex justify-center items-center h-screen mt-2">
+    <p>Patience you must have, worth it will be...</p>
+  </div>
+  <div *ngIf="!loading" class="card flex justify-center w-screen h-100 mb-6">
+    <div class="card-body">
+      <div class="row">
+        <div class="grid grid-cols-3 gap-4 mb-4">
+          <button routerLink="/search">Characters</button>
+          <button routerLink="/planets">Planets</button>
+          <button routerLink="/starships">Starships</button>
+        </div>
+        <div class="col-md-8 mb-2 ">
+          <p>Search Character</p>
+          <input 
+          type="text" 
+          style="color: black"
+          [(ngModel)]='listFilter'/>
+        </div>
+  
+      </div>
+      <div class="row">
+      </div>
+      <div class="table-responsive" style="text-align: center;">
+        <table class="min-w-[600px]">
+          <thead class="backdrop-grayscale">
+            <tr class="bg-gray-400 w-500">
+              <th>Name</th>
+              <th>Manufacturer</th>
+              <th>Cargo Capacity</th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-400 w-500">
+            <tr *ngFor="let character of filteredCharacter">
+              <td>{{ character.name }}</td>
+              <td>{{ character.manufacturer }}</td>
+              <td>{{ character.cargo_capacity}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
