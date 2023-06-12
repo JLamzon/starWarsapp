@@ -11,6 +11,10 @@ import { PlanetsTabComponent } from './TabPages/planets-tab/planets-tab.componen
 import { SearchTabsComponent } from './search-page/search-tabs/search-tabs.component';
 import { StarshipTabComponent } from './TabPages/starship-tab/starship-tab.component';
 import { CharacterTabComponent } from './TabPages/character-tab/character-tab.component';
+import { ClickedSearchComponent } from './search-page/clicked-search/clicked-search.component';
+import { ModalComponent } from './search-page/modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +23,16 @@ import { CharacterTabComponent } from './TabPages/character-tab/character-tab.co
     PlanetsTabComponent,
     SearchTabsComponent,
     StarshipTabComponent,
-    CharacterTabComponent
+    CharacterTabComponent,
+    ClickedSearchComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatDialogModule,
     RouterModule.forRoot([
       { path: 'search', component: SearchPageComponent },
       { path: 'homepage', component: HomePageComponent },

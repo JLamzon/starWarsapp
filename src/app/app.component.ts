@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +19,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   pageTitle: string = 'Stars Wars Directory';
+
+  constructor(private dialogRef : MatDialog ){}
+
+  // openDialog(){
+  //   this.dialogRef.open(PopUpComponent);
+  // }
 }

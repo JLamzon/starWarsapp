@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    color: white;
+}
+
+td {
+    color: white;
+}
+
+th {
+    color: black;
+}
+
+button{
+    color: yellow;
+    outline: 1px solid yellow;
+}

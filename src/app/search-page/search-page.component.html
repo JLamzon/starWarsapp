@@ -1,5 +1,8 @@
-<div *ngIf="loading" class="flex justify-center items-center h-screen mt-2">
-  <p>Patience you must have, worth it will be...</p>
+<div *ngIf="loading" class="flex justify-center items-center w-screen mt-2" style="gap: 1rem">
+  <div><img class="loadingImage" style="width: 300px" src="../../assets/img/findyoda.jpeg"></div>
+  <div>
+    <p>Patience you must have, data is loading...<br> while we gather the data, try to find yoda</p>
+  </div>
 </div>
 <div *ngIf="!loading" class="card flex justify-center w-screen h-100 mb-6">
   <div class="card-body">
@@ -10,13 +13,12 @@
         <button routerLink="/starships">Starships</button>
       </div>
       <div class="col-md-8 mb-2 ">
-        <header>Search this list</header>
+        <header>Search Characters</header>
         <input 
         type="text" 
         style="color: black"
         [(ngModel)]='listFilter'/>
       </div>
-
     </div>
     <div class="row">
     </div>
@@ -24,6 +26,7 @@
       <table class="min-w-[600px]">
         <thead class="backdrop-grayscale">
           <tr class="bg-gray-400 w-500">
+            <!-- <th>Details</th> -->
             <th>Name</th>
             <th>Height</th>
             <th>Birth</th>
@@ -32,13 +35,18 @@
         </thead>
         <tbody class="bg-gray-400 w-500">
           <tr *ngFor="let character of filteredCharacter">
+            <!-- <img [src]="'../../assets/img/characters' + character.id + '.jpg'" alt="Character Image" /> -->
+            <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="openModal(character)">
+              More
+            </button> -->
             <td>{{ character.name }}</td>
             <td>{{ character.height }}cm</td>
             <td>{{ character.birth_year}}</td>
             <td>{{ character.hair_color}}</td>
-          </tr>
+          </tr> 
         </tbody>
       </table>
     </div>
   </div>
 </div>
+

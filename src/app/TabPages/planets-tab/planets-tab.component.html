@@ -1,1 +1,45 @@
-<p class="flex justify-center text-white">coming soon</p>
+<div *ngIf="loading" class="flex justify-center items-center mt-2 w-screen" style="gap: 1rem">
+    <div><img class="" style="width: 300px" src="../../assets/father.jpeg"></div>
+    <div>
+      <p>I find your lack of faith disturbing - Darth Vader</p>
+    </div>
+</div>
+  <div *ngIf="!loading" class="card flex justify-center w-screen h-100 mb-6">
+    <div class="card-body">
+      <div class="row">
+        <div class="grid grid-cols-3 gap-4 mb-4">
+          <button routerLink="/search">Characters</button>
+          <button routerLink="/planets">Planets</button>
+          <button routerLink="/starships">Starships</button>
+        </div>
+        <div class="col-md-8 mb-2 ">
+          <p>Search Planets</p>
+          <input 
+          type="text" 
+          style="color: black"
+          [(ngModel)]='listFilter'/>
+        </div>
+      </div>
+      <div class="row">
+      </div>
+      <div class="table-responsive" style="text-align: center;">
+        <table class="min-w-[600px]">
+          <thead class="backdrop-grayscale">
+            <tr class="bg-gray-400 w-500">
+              <th>Name</th>
+              <th>Climate</th>
+              <th>Population</th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-400 w-500">
+            <tr *ngFor="let character of filteredCharacter">
+              <td>{{ character.name }}</td>
+              <td>{{ character.climate }}</td>
+              <td>{{ character.population}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

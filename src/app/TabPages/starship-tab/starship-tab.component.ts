@@ -12,20 +12,18 @@ export class StarshipTabComponent {
   get listFilter(): string {
       return this._listFilter;
   }
+
   set listFilter(value: string){
       this._listFilter = value;
       console.log('In Setter:', value)
       this.filteredCharacter = this.performFilter(value);
   }
 
-
-
   filteredCharacter: Starship[] = [];
   character: Starship[] = [];
   errorMessage: string = '';
   loading: boolean = true; // Add a loading flag
 
-  
 
     //when the component loads, text in here is used to filter the lost of products in the search field
     ngOnInit(): void {

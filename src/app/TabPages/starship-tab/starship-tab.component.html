@@ -1,6 +1,9 @@
-<div *ngIf="loading" class="flex justify-center items-center h-screen mt-2">
-    <p>Patience you must have, worth it will be...</p>
+<div *ngIf="loading" class="flex justify-center items-center mt-2 w-screen " style="gap: 1rem">
+  <div><img class="" style="width: 300px" src="../../assets/obses.jpg"></div>
+  <div>
+    <p>data is loading....</p>
   </div>
+</div>
   <div *ngIf="!loading" class="card flex justify-center w-screen h-100 mb-6">
     <div class="card-body">
       <div class="row">
@@ -10,13 +13,12 @@
           <button routerLink="/starships">Starships</button>
         </div>
         <div class="col-md-8 mb-2 ">
-          <p>Search Character</p>
+          <p>Search Starships</p>
           <input 
           type="text" 
           style="color: black"
           [(ngModel)]='listFilter'/>
         </div>
-  
       </div>
       <div class="row">
       </div>
@@ -31,6 +33,7 @@
           </thead>
           <tbody class="bg-gray-400 w-500">
             <tr *ngFor="let character of filteredCharacter">
+              <!-- <img src=""> -->
               <td>{{ character.name }}</td>
               <td>{{ character.manufacturer }}</td>
               <td>{{ character.cargo_capacity}}</td>
